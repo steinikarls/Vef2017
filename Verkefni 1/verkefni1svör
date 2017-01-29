@@ -1,0 +1,24 @@
+0.5% Hver er munurinn á public, protected, og private þegar kemur að property og methods? 
+
+Public sama með Private en ef þú gerir subclass getur það breytt data í private
+Protected  any code can accsess and change the data
+Private only methods and functionsin in this class can accsess change the data
+
+0.5% Hvað er Inheritance? komdu með dæmi. 
+Segjum að ég by til class konni og hann hefur breytur t.d. Augnlit, húðlitur og hárlitur.
+Og segjum að konni eignast son 
+Í staðinn að gera nýjan class fyrir sonin þá er hægt að nota extends (inheratance) fyrir flestar breyturnar t.d. Augnlit og húðlit.
+Getur svo breytt augnliti eða húðliti.
+
+0.5% Hvað er namespaces?
+Það leyfir þér að nota sama function eða class name í mismunandi pörtum á sama kóða ánþess að valda árekstri.
+
+ 1% Búðu til class sem heitir Book sem hefur eftirfarandi: properties; title, price. Methods; setPrice, getPrice, setTitle, getTitle. Smið sem tekur tvo parametra (titil og verð)
+
+ 0.5% Búðu til class sem erfir (extends) Book class. Bættu við eigindinu publisher og tveimur aðferðum getPublisher og setPublisher. 
+
+0.5% búðu til þrjú object; $efnafraedi, $staerdfraedi og $islenska. Gefðu þessum objectum titil og verð. Birtu bókaupplýsingarnar title, price og publisher. 
+
+1% Búðu til class sem heitir User sem geymir gögn um notanda. User þarf að hafa eftirfarandi: Properties; email og password. Methods: setPassword(), getPassword(), setEmail(), getEmail(), Smiður sem tekur array sem parameter og upphafstillir notanda. 
+
+0.5% Af hverju ættir þú að nota OOP í PHP? Hvenær væri það hugsanlega heppilegt og hvenær ekki? Rökstuddu svar þitt! 
