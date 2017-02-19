@@ -1,0 +1,28 @@
+1. MVC
+
+Hvað er MVC?
+The Model-View-Controller (MVC) er architectural  mynstur sem aðskilur application  í þrjá hluta. Model, View og Controller. Hver af þessum hlutum eru byggð til að takast ákveðnum hluta application. MVC er einn af algengustu  application til að búa til stækkanleg og ílengri verkefni.
+
+
+Model: Model hlutinn samsvarar öllum gögnum sem tengjast   notandanum sem hann vinnur með. Þetta getur táknað annaðhvort gögn sem verið er að flytja á milli View og Controller hluti eða önnur business tengd gögnum. Til dæmis, Customer object will retrieve the customer information from the database, manipulate it and update it data back to the database or use it to render data.
+
+View: View hlutin er notaður fyrir alla UI logic application. Til dæmis, Customer view would include all the UI components such as text boxes, dropdowns, etc. that the final user interacts with.
+
+Controller: Controller starfa sem viðmót milli Model og View hluti til að processa alla business logic og komandi beiðnir, vinna gögn með því að nota Model hluti og samskipti við View til að koma með endanlega útkomu. t.d
+Customer controller would handle all the interactions and inputs from the Customer View and update the database using the Customer Model. The same controller would be used to view the Customer data.
+
+
+
+Routing
+
+Routing helps you to define a URL structure and map the URL with the controller. 
+For instance let's say we want that when any user types “http://localhost/View/ViewCustomer/”, it goes to the “Customer” Controller and invokes “DisplayCustomer” action. This is defined by adding an entry in to the “routes” collection using the “maproute” function. Below is the under lined code which shows how the URL structure and mapping with controller and action is defined. routes.MapRoute("View", // Route name"View/ViewCustomer/{id}", // URL with parametersnew { controller = "Customer", action = "DisplayCustomer", id = UrlParameter.Optional }); // Parameter defaults
+
+Autoloader
+
+autoloader er notaður til að tilvísa í autolaoder fyrir klasa 
+í mini3 er autoloder undir vendor möppunni og rennur allt sem er í composer möppunni, líka svo það þarf ekki að vera endalausar include og require 
+
+Composer
+
+This is where Composer comes in. Composer is a dependency manager for PHP. Composer will manage the dependencies you require on a project by project basis. This means that Composer will pull in all the required libraries, dependencies and manage them all in one place.
