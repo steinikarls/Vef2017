@@ -50,8 +50,7 @@ class Song extends Model
         $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link);
 
         // useful for debugging: you can see the SQL behind above construction by using:
-        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
-
+    
         $query->execute($parameters);
     }
 

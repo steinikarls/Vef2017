@@ -24,18 +24,19 @@ class Images extends Model
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
      * to save HTML and JS to the database, which is a valid use case). Data will only be cleaned when putting it out
      * in the views (see the views for more info).
-     * @param string $artist imageName
-     * @param string $track imageText
-     * @param string $link imagePath
+     * @param string $imageName imageName
+     * @param string $imageText imageText
+     * @param string $imagePath imagePath
+     * @param string $id imageID
      */
-    public function addImage($imageName, $imageText, $imagePath)
+    public function addImage($id ,$imageName, $imageText, $imagePath)
     {
-        $sql = "INSERT INTO images (imageName, imageText, imagePath) VALUES (:imageName, :imageText, :imagePath)";
+        $sql = "INSERT INTO images (imageID, imageName, imageText, imagePath) VALUES (:imageID, :imageName, :imageText, :imagePath)";
         $query = $this->db->prepare($sql);
-        $parameters = array(':imageName' => $artist, ':imageText' => $track, ':imagePath' => $link);
+        $parameters = array(':imageID' => $id, ':imageName' => $imageName, ':imageText' => $imageText, ':imagePath' => $imagePath);
 
         // useful for debugging: you can see the SQL behind above construction by using:
-        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+        
 
         $query->execute($parameters);
     }

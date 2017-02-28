@@ -31,7 +31,7 @@ class ImageController
             // Instance new Model (Song)
             $Image = new Images();
             // do addSong() in model/model.php
-            $Image->addImage($_POST["imageName"], $_POST["imageName"],  $_POST["imagePath"]);
+            $Image->addImage($_POST["id"], $_POST["imageName"], $_POST["imageName"],  $_POST["imagePath"]);
         }
 
         // where to go after song has been added

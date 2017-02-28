@@ -1,0 +1,82 @@
+Verkefni 4
+1.
+PDO is an interface for accessing databases:
+
+The PHP Data Objects (PDO) extension defines a lightweight, consistent interface for accessing databases in PHP. Each database driver that implements the PDO interface can expose database-specific features as regular extension functions. Note that you cannot perform any database functions using the PDO extension by itself; you must use a database-specific PDO driver to access a database server. 
+MySQLi is an extension for accessing MySQL databases:
+
+The mysqli extension allows you to access the functionality provided by MySQL 4.1 and above. 
+PDO has named parameters but MuSqli does not.
+
+2.
+PDO hefur fastar parameters
+
+3.
+$connection->exec();
+Execute an SQL statement and return the number of affected rows
+$connection er tenginginn við gagnagrunninn og exec er framkvæmdinn en það vantar inn í svigan $SQL til að fá gögn
+
+$affected = $conn->exec($sql);
+    if ($affected === false) {
+        $err = $conn->errorInfo();
+        if ($err[0] === '00000' || $err[0] === '01000') {
+            return true;
+        }
+    }
+    return $affected;
+
+4. 
+$connection->query();
+Executes an SQL statement, returning a result set as a PDOStatement object    
+function getFruit($conn) {
+    $sql = 'SELECT name, color, calories FROM fruit ORDER BY name';
+    foreach ($conn->query($sql) as $row) {
+        print $row['name'] . "\t";
+        print $row['color'] . "\t";
+        print $row['calories'] . "\n";
+    }
+}
+
+5.
+Represents a prepared statement and, after the statement is executed, an associated result set.
+
+6.
+sækjir numeric array t.d
+<?php
+    // Fetch as numeric array.
+    $query->setFetchMode(PDO::FETCH_NUM);
+    while($result = $query->fetch()){
+    print_r($result);
+}
+?>
+Result:
+Array ( [0] => Book 1 ) 
+Array ( [0] => Book 2 )
+
+7. 
+When objects are fetched via PDO::FETCH_CLASS the object properties are assigned first, and then the constructor of the class is invoked.
+
+8.
+ert að velja row úr array sem þú vilt eins og í dæmi er hún að sækja row 1
+
+9. 
+Prepares a statement for execution and returns a statement object
+
+
+
+
+10.
+Binds a value to a parameter
+?php
+/* Execute a prepared statement by binding PHP variables */
+$calories = 150;
+$colour = 'red';
+$sth = $dbh->prepare('SELECT name, colour, calories
+ FROM fruit
+ WHERE calories < :calories AND colour = :colour');
+$sth->bindValue(':calories', $calories, PDO::PARAM_INT);   // binds calories value to int parameter
+$sth->bindValue(':colour', $colour, PDO::PARAM_STR);	   // binds color value to string parameter 
+$sth->execute();
+?>
+
+það er gagnalegt þegar gögn eru bretileg

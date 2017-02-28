@@ -3,14 +3,16 @@
     
     <div class="box">
         <h3>Add a Image</h3>
-        <form action="<?php echo URL; ?>Images/addImage" method="POST">
+        <form action="<?php echo URL; ?>image/addImage" method="POST">
+            <label>id</label>
+            <input type="text" name="id" value="" required />
             <label>imageName</label>
             <input type="text" name="imageName" value="" required />
             <label>imagePath</label>
             <input type="text" name="imagePath" value="" required />
             <label>imageText</label>
             <input type="text" name="link" value="" />
-            <input type="submit" name="submit_add_image" value="Submit" />
+            <input type="submit" name="submit_add_Image" value="submit" />
         </form>
     </div>
     <!-- main content output -->
