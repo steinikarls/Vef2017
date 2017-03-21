@@ -1,0 +1,12 @@
+{
+	"pizzaarray":[
+	{
+  		"crust": "original",
+  		"toppings": ["cheese", "pepperoni", "garlic"],
+  		"status": "cooking",
+  		"customer": {
+    		"name": "steini",
+    		"phone": "821-6327"
+  		}
+  	}]
+}
